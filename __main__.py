@@ -30,10 +30,7 @@ def decrypt_token(encrypted_token, password):
     decrypted_token = decryptor.update(ciphertext) + decryptor.finalize()
     return decrypted_token.decode()
 
-permissions_integer = 1759110961823591
-
-intents = discord.Intents.default()
-intents.value = permissions_integer
+intents = discord.Intents.all()
 
 class PCBots(commands.AutoShardedBot):
     global watching
@@ -177,7 +174,12 @@ class PCBots(commands.AutoShardedBot):
                                 await self.log(result)
 
         if author in watching:
-            await self.log(f'{message.author} is being heard. He says: {message.content}')
+            if message.attachments:
+                for attachment in message.attachments:
+                    await self.log(f'{message.author} sent an attachment: {attachment.url}')
+            else:
+                await self.log(f'{message.author} is being heard. He says: {message.content}')
+
 
         if author in trusted_users:
             if message.content:
