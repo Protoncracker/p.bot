@@ -209,6 +209,8 @@ try:
     client = PCBots()
     client.run(token)
 except Exception as e:
-    print("Failed to decrypt the token. Please check your password and try again.")
-
+    if str(e) == '':
+        print('Failed to decrypt the token. Please check your password and try again.')
+    else:
+        print(f'An exception occurred: {e}')
 
