@@ -30,8 +30,10 @@ def decrypt_token(encrypted_token, password):
     decrypted_token = decryptor.update(ciphertext) + decryptor.finalize()
     return decrypted_token.decode()
 
+permissions_integer = 1759110961823591
 
-intents = discord.Intents.all()
+intents = discord.Intents.default()
+intents.value = permissions_integer
 
 class PCBots(commands.AutoShardedBot):
     global watching
