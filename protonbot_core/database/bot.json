@@ -1,0 +1,15 @@
+{
+	"appid": "1253735300497281125",
+	"public_key": "4ec686a2c03d3ec4598c8ec1b542fc2d9bc88f475afc6bbaba67aa0806049cea",
+    "name": "ProtonBot",
+    "version": "1.0.0",
+    "release_date": "22-11-2024",
+    "is_production": "False",
+    "description": "A versatile bot for managing Discord servers.",
+    "author": "Protoncracker",
+    "github": "https://github.com/Protoncracker",
+    "license": "ProtonLicense",
+    "commands_prefix": "None",
+    "support_server": "Link",
+    "website": "Link"
+}
